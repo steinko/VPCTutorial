@@ -1,0 +1,21 @@
+default:
+   image: pulumi/pulumi-nodejs
+stages:
+  - provide-infrastructure
+  - destroy-infrastructure
+
+provide-infrastructure:
+  stage: provide-infrastructure
+  script:
+    - npm i
+    - pulumi login
+    - pulumi stack select dev
+    - pulumi up -y
+ 
+destroy-infrastructucture:
+   stage: destroy-infrastructure
+   script:
+     - npm i
+     - pulumi login
+     - pulumi stack select dev
+     - pulumi destroy -y
