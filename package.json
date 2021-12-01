@@ -1,11 +1,20 @@
 {
     "name": "VPCTutorial",
     "devDependencies": {
-        "@types/node": "^14"
+        "@babel/core": "^7.16.0",
+        "@babel/preset-env": "^7.16.4",
+        "@types/node": "^14",
+        "babel-jest": "^27.4.2",
+        "jest": "^27.4.3"
     },
     "dependencies": {
-        "@pulumi/pulumi": "^3.0.0",
+        "@babel/preset-typescript": "^7.16.0",
         "@pulumi/aws": "^4.0.0",
-        "@pulumi/awsx": "^0.30.0"
+        "@pulumi/awsx": "^0.30.0",
+        "@pulumi/pulumi": "^3.0.0",
+        "@types/jest": "^27.0.3"
+    },
+    "scripts": {
+        "test": "jest"
     }
 }

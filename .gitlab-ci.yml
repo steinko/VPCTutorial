@@ -1,8 +1,15 @@
 default:
    image: pulumi/pulumi-nodejs
 stages:
+  - unit-test
   - provide-infrastructure
   - destroy-infrastructure
+
+unit-test:
+  stage: unit-test
+  script:
+    - npm i
+    - npm test
 
 provide-infrastructure:
   stage: provide-infrastructure
