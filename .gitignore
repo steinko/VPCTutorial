@@ -1,4 +1,9 @@
 /bin/
 /node_modules/
+/acceptancetest/node_modules/
+/acceptancetest/coverage/
+/acceptancetest/package-lock.json
+/infAsCode/node_modules/
+/infAsCode/package-lock.json
 package-lock.json
 .project
