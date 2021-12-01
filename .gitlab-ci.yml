@@ -3,26 +3,41 @@ default:
 stages:
   - unit-test
   - provide-infrastructure
+  - acceptance-test
   - destroy-infrastructure
 
 unit-test:
   stage: unit-test
   script:
+    - cd infAsCode
     - npm i
     - npm test
+    - cd ..
 
 provide-infrastructure:
   stage: provide-infrastructure
   script:
+    - cd infAsCode
     - npm i
     - pulumi login
     - pulumi stack select dev
     - pulumi up -y
+    - cd ..
+
+acceptance-test:
+  stage: acceptance-test
+  script:
+    - cd acceptancetest
+    - npm i
+    - npm test
+    - cd ..
  
 destroy-infrastructucture:
    stage: destroy-infrastructure
    script:
+     - cd infAsCode
      - npm i
      - pulumi login
      - pulumi stack select dev
      - pulumi destroy -y
+     - cd ..
