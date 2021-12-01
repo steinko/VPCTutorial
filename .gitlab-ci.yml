@@ -31,8 +31,8 @@ acceptance-test:
     - npm i
     - npm test
     - cd ..
-   environment:
-     name: test
+  environment:
+    name: test
 destroy-infrastructucture:
    stage: destroy-infrastructure
    script:
